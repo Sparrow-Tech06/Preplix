@@ -1,0 +1,13 @@
+[
+  {
+    "q": "What is the value of sin(90°)?",
+    "options": ["0", "1", "1/2", "Undefined"],
+    "correct": 1,
+    "explanation": "According to trigonometric values, sin(90°) = 1."
+  },
+  {
+    "q": "What is sin²θ + cos²θ equal to?",
+    "options": ["0", "2", "1", "-1"],
+    "correct": 2
+  }
+]
