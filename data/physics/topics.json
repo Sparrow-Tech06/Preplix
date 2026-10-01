@@ -1,0 +1,17 @@
+{
+  "subject": "physics",
+  "name": "Physics",
+  "description": "Important Physics topics for competitive examinations.",
+  "topics": [
+    {
+      "id": "motion",
+      "name": "Motion",
+      "description": "Speed, velocity, acceleration and motion."
+    },
+    {
+      "id": "force",
+      "name": "Force",
+      "description": "Force, momentum and Newton's laws of motion."
+    }
+  ]
+}
