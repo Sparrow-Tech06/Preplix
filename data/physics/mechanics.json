@@ -1,3 +1,13 @@
 [
-  { "q": "What is Newton's Second Law?", "a": "Force = Mass × Acceleration (F = ma)" }
+  {
+    "q": "What is the value of x if 2x + 5 = 15?",
+    "options": ["x = 3", "x = 5", "x = 10", "x = 2"],
+    "correct": 1,
+    "explanation": "2x + 5 = 15 => 2x = 10 => x = 5"
+  },
+  {
+    "q": "What is the formula for (a + b)²?",
+    "options": ["a² + b²", "a² + 2ab + b²", "a² - 2ab + b²", "2a + 2b"],
+    "correct": 1
+  }
 ]
