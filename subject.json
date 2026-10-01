@@ -1,0 +1,9 @@
+{
+  "math": {
+    "title": "Mathematics",
+    "topics": [
+      { "id": "algebra", "name": "Algebra" },
+      { "id": "geometry", "name": "Geometry" }
+    ]
+  }
+}
