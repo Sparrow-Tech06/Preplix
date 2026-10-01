@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+
+  <h2 id="title" class="mb-4 text-capitalize"></h2>
+  <div id="questions" class="d-flex flex-column gap-3"></div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const sub = params.get("subject");
+    const topic = params.get("topic");
+
+    if (!sub || !topic) {
+      document.getElementById("title").innerText = "Invalid Parameters!";
+    } else {
+      document.getElementById("title").innerText = `${sub} - ${topic} Questions`;
+
+      fetch(`data/${sub}/${topic}.json`)
+        .then(res => {
+          if (!res.ok) throw new Error();
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById("questions").innerHTML = data.map((item, index) => `
+            <div class="card shadow-sm p-3">
+              <h6 class="text-primary"><i class="bi bi-question-circle me-2"></i>Q${index + 1}: ${item.q}</h6>
+              <p class="mb-0 text-secondary ms-4"><i class="bi bi-check2-circle text-success me-2"></i><strong>Ans:</strong> ${item.a}</p>
+            </div>
+          `).join('');
+        })
+        .catch(() => document.getElementById("questions").innerHTML = '<div class="alert alert-danger">Questions file not found!</div>');
+    }
+  </script>
+</body>
+</html>
