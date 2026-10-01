@@ -6,7 +6,7 @@
       { "id": "geometry", "name": "Geometry" },
       { "id": "trigonometry", "name": "Trigonometry" }
     ]
-  },
+  }, 
   "physics": {
     "title": "Physics",
     "topics": [
