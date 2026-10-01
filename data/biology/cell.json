@@ -1,0 +1,37 @@
+{
+  "subject": "Biology",
+  "topic": "Cell",
+
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which organelle is known as the powerhouse of the cell?",
+
+      "options": [
+        "Nucleus",
+        "Mitochondria",
+        "Ribosome",
+        "Golgi apparatus"
+      ],
+
+      "answer": 1,
+
+      "explanation": "Mitochondria are called the powerhouse of the cell because they produce most of the cell's ATP.",
+
+      "exams": [
+        {
+          "name": "SSC CGL",
+          "year": 2024
+        },
+        {
+          "name": "RRB Group D",
+          "year": 2022
+        },
+        {
+          "name": "WBP Constable",
+          "year": 2021
+        }
+      ]
+    }
+  ]
+}
