@@ -1,0 +1,17 @@
+{
+  "subject": "biology",
+  "name": "Biology",
+  "description": "Important Biology topics for competitive examinations.",
+  "topics": [
+    {
+      "id": "cell",
+      "name": "Cell",
+      "description": "Cell structure, organelles and functions."
+    },
+    {
+      "id": "human-body",
+      "name": "Human Body",
+      "description": "Important systems and organs of the human body."
+    }
+  ]
+}
