@@ -1,0 +1,17 @@
+{
+  "subject": "chemistry",
+  "name": "Chemistry",
+  "description": "Important Chemistry topics for competitive examinations.",
+  "topics": [
+    {
+      "id": "atomic-structure",
+      "name": "Atomic Structure",
+      "description": "Atoms, subatomic particles and atomic models."
+    },
+    {
+      "id": "periodic-table",
+      "name": "Periodic Table",
+      "description": "Elements, groups, periods and periodic properties."
+    }
+  ]
+}
