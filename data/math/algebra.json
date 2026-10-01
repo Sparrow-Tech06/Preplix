@@ -1,0 +1,10 @@
+[
+  {
+    "q": "What is x if 2x + 5 = 15?",
+    "a": "x = 5"
+  },
+  {
+    "q": "What is the formula for (a+b)²?",
+    "a": "a² + 2ab + b²"
+  }
+]
