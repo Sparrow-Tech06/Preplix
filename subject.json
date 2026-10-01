@@ -3,7 +3,8 @@
     "title": "Mathematics",
     "topics": [
       { "id": "algebra", "name": "Algebra" },
-      { "id": "geometry", "name": "Geometry" }
+      { "id": "geometry", "name": "Geometry" },
+      { "id": "trigonometry", "name": "Trigonometry" }
     ]
   },
   "physics": {
