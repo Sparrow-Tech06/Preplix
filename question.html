@@ -5,11 +5,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="container py-4">
+<body class="container py-4 bg-light">
 
   <h2 id="title" class="mb-4 text-capitalize"></h2>
   <div id="questions" class="d-flex flex-column gap-3"></div>
 
+  <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const params = new URLSearchParams(location.search);
     const sub = params.get("subject");
@@ -26,15 +27,51 @@
           return res.json();
         })
         .then(data => {
-          document.getElementById("questions").innerHTML = data.map((item, index) => `
-            <div class="card shadow-sm p-3">
-              <h6 class="text-primary"><i class="bi bi-question-circle me-2"></i>Q${index + 1}: ${item.q}</h6>
-              <p class="mb-0 text-secondary ms-4"><i class="bi bi-check2-circle text-success me-2"></i><strong>Ans:</strong> ${item.a}</p>
-            </div>
-          `).join('');
+          document.getElementById("questions").innerHTML = data.map((item, i) => {
+            const hasExp = item.explanation && item.explanation.trim() !== "";
+            const expId = `exp-${i}`;
+
+            return `
+              <div class="card shadow-sm p-3 bg-white">
+                <h6 class="text-dark mb-3">
+                  <span class="badge bg-primary me-2">Q${i + 1}</span>${item.q}
+                </h6>
+
+                <!-- MCQ Options -->
+                <div class="row g-2 mb-3 ms-1">
+                  ${item.options.map((opt, optIdx) => `
+                    <div class="col-md-6">
+                      <div class="p-2 border rounded ${optIdx === item.correct ? 'border-success bg-success-subtle fw-semibold' : 'bg-light'}">
+                        ${String.fromCharCode(65 + optIdx)}. ${opt}${optIdx === item.correct ? '<i class="bi bi-check-circle-fill text-success ms-2"></i>' : ''}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <!-- Explanation Dropdown -->
+                <div>
+                  ${hasExp ? `
+                    <button class="btn btn-outline-info btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#${expId}">
+                      <i class="bi bi-lightbulb me-1"></i> View Explanation
+                    </button>
+                    <div class="collapse mt-2" id="${expId}">
+                      <div class="card card-body bg-info-subtle border-0 text-dark small">
+                        <strong>Explanation:</strong> ${item.explanation}
+                      </div>
+                    </div>
+                  ` : `
+                    <span class="text-muted small"><i class="bi bi-info-circle me-1"></i>No explanation</span>
+                  `}
+                </div>
+              </div>
+            `;
+          }).join('');
         })
-        .catch(() => document.getElementById("questions").innerHTML = '<div class="alert alert-danger">Questions file not found!</div>');
+        .catch(() => {
+          document.getElementById("questions").innerHTML = '<div class="alert alert-danger">Questions file not found!</div>';
+        });
     }
   </script>
 </body>
 </html>
+
