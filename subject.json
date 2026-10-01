@@ -5,5 +5,24 @@
       { "id": "algebra", "name": "Algebra" },
       { "id": "geometry", "name": "Geometry" }
     ]
+  },
+  "physics": {
+    "title": "Physics",
+    "topics": [
+      { "id": "mechanics", "name": "Mechanics" },
+      { "id": "optics", "name": "Optics" }
+    ]
+  },
+  "chemistry": {
+    "title": "Chemistry",
+    "topics": [
+      { "id": "organic", "name": "Organic Chemistry" }
+    ]
+  },
+  "biology": {
+    "title": "Biology",
+    "topics": [
+      { "id": "genetics", "name": "Genetics & DNA" }
+    ]
   }
 }
