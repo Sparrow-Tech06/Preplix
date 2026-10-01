@@ -13,7 +13,7 @@
   <script>
     const sub = new URLSearchParams(location.search).get("subject");
 
-    fetch("subject.json")
+    fetch("data/subject.json")
       .then(res => res.json())
       .then(data => {
         const item = data[sub];
