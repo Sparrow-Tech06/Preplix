@@ -1,1 +1,19 @@
+{
+  "id": "101",
+  "topicName": "Percentage & Ratio",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is 20% of 150?",
+      "options": ["20", "25", "30", "35"],
+      "answer": 2
+    },
+    {
+      "id": 2,
+      "question": "If A:B = 2:3 and B:C = 4:5, find A:C ratio.",
+      "options": ["8:15", "6:15", "2:5", "8:10"],
+      "answer": 0
+    }
+  ]
+}
 
